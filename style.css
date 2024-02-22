@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+
+/* settings */
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+}
+
+html,body{
+    font-family: "Protest Riot";
+}
+
+body{
+    max-width:100vh;
+    background:url(./img/bg.jpeg);
+    background-repeat:no-repeat;
+    background-size:cover;
+
+}
+body{
+    max-width:100%;
+}
+
+/* main main main */
+
+.main{
+    max-width:1000px;
+    margin:0px auto;
+    position:relative;
+}
+
+/* text text text */
+
+.game-title{
+    text-align:center;
+    padding-top:30px;
+    color:#ffffff;
+}
+
+
+
+.start-btn{
+    display:block;
+    margin:30px auto 10px;
+    background:#df2121;
+    color:#fff;
+    border:none;
+    font-size:40px;
+    padding:10px;
+}
+
+
+.victory-message{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display:none
+}
+
+
+/* field and game elements */
+.game-field{
+    display:none;
+    /* display:grid; */
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    padding:10px;
+    width:100%;
+    height:600px;
+    background:#ffffff;
+}
+
+.card{
+    width:150px;
+    height:200px;
+    transform-style:preserve-3d;
+    cursor:pointer;
+    border:none;
+}
+
+.card.visible .card__front{
+    transform:rotateY(-180deg);
+    backface-visibility: hidden;
+}
+
+.card.visible .card__back{
+    transform:rotateY(0deg);
+}
+.card__wrapp{
+    width:100%;
+    height:100%;
+    transition: all .5s;
+}
+.card__front{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#ff7300;
+    color:#fff;
+    font-size:24px;
+    transition: background-color .3s ease-in-out;
+    transform:rotateY(0deg);
+}
+.card__front:hover{
+    background:#d66304;
+}
+.card__back{
+    backface-visibility: hidden;
+    transform:rotateY(180deg);
+}
+.card__back,
+.card__front{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    transition: transform .5s ease-in-out;
+}
+.card__img{
+    width:100%;
+    height:100%;
+}
+
+.music-block{
+    cursor:pointer;
+    max-width:50px;
+    height:50px;
+    position:relative;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.music-block__icon{
+    width:100%;
+}
+
